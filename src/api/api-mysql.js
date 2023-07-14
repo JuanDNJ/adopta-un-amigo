@@ -1,5 +1,6 @@
+import {API_URL} from '../consts'
 export const getPets = async () => {
-    const response = await fetch('http://localhost:5174/pets');
+    const response = await fetch(`${API_URL}/pets`);
     const data = await response.json();
     return data;
 }
