@@ -15,3 +15,11 @@ export const selectCatetory = async (catetory) => {
     const data = await response.json();
     return data;
 }
+
+// get categories
+
+export const getCategories = async () => {
+    const response = await fetch(`${API_URL}/categories`);
+    const data = await response.json();
+    return data;
+}
