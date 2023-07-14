@@ -6,32 +6,32 @@ import Banner from '../../../components/Portada/banner'
 import { useState, useEffect } from 'react'
 
 const Inicio = () => {
-  const [banners, setBanners] = useState([])
-  
-  const getApiBanners = async () => {
-    const all = await fetch(`http://localhost:5174/banners`)
-    const data = await all.json()
-    return data
+  const [frontPages, setFrontPages] = useState([]) // Estado para guardar las portadas
+
+  const getFrontPages = async () => { // Funcion asincrona para obtener las portadas
+    const pages = await fetch(`http://localhost:5174/front-pages`) // Fetch para obtener las portadas
+    const record = await pages.json() // Convertir a JSON
+    return record // Retornar el JSON
   }
 
-  useEffect(() => {
-    getApiBanners().then(
+  useEffect(() => { // UseEffect se ejecuta despues de que se renderiza el componente
+    getFrontPages().then( // Llamar a la funcion asincrona
       (recor) => {
-        if(recor.length === 0) return console.error('No hay banners')
+        if (recor.length === 0) return console.error('No hay portadas') // Si no hay portadas, mostrar error
         console.log(recor)
-        setBanners(recor)
+        setFrontPages(recor) // Guardar las portadas en el estado
       }
-    ).catch(err => console.error(err))
-  }, [])
-  return (
+    ).catch(err => console.error(err)) // Si hay un error, mostrarlo en consola
+  }, []) // El arreglo vacio es para que solo se ejecute una vez
+
+  return ( // JSX
     <>
-    {banners.map((banner, index) => (
-      <Banner key={index} title={banner.title} text={banner.text} color={banner.color} />
-    ))}
       <Contenido bgColor="transparent">
-        <Portada photoUrl={'https://firebasestorage.googleapis.com/v0/b/juandfe.appspot.com/o/api%2Fv1%2Fpets%2Fdogs%2Fperros1024x1024.jpg?alt=media&token=e629ebfb-f72a-4d8f-b01c-98a989eb4259'}>
-          {/* <Banner title={banners[0].title} text={banners[0].text} color={banners[0].color} /> */}
-        </Portada>
+        {frontPages.map((fPage, index) => (
+          <Portada key={index} photoUrl={fPage.photo_url}>
+            <Banner title={fPage.title} text={fPage.text} color={fPage.color} />
+          </Portada>
+        ))}
       </Contenido>
       <Contenido bgColor="white">
         <Contenedor>
