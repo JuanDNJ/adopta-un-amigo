@@ -1,7 +1,7 @@
 import './mascotas.css'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import {getPets} from '../../../api/api-mysql'
+import {getPets, searchPets} from '../../../api/api-mysql'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import Titulo from '../../../components/Titulo'
@@ -10,7 +10,16 @@ import Titulo from '../../../components/Titulo'
 export default function Mascotas () {
 
   const [pets, setPets] = useState([])
-
+ const handleSearch = (e) => {
+    console.log(e.target.value)
+    searchPets(e.target.value)
+    .then((data) => {
+      if(data.length > 0){
+        setPets(data)
+      }
+    })
+    .catch((error) => console.log(error))
+  }
   useEffect(() => {
     getPets()
       .then((data) => setPets(data))
@@ -19,14 +28,28 @@ export default function Mascotas () {
   return (
     <Contenido bgColor={'white'}>
       <Contenedor>
-        <section className="mascotas">
-          <h2 className="titulo-secundario">Mascotas</h2>
-          {pets.map((pet) => (
-            <Link key={pet.pet_id} to={`/mascota/${pet.pet_id}`}>
-              <h1>{pet.name}</h1>
-              <img className='photo-url' src={pet.photo_url} alt="" />
-            </Link>
-          ))}
+        <section className="contenido">
+          <aside className='filter-pets'>
+            <input onInput={handleSearch} type="search" name="search" id="search" placeholder='Search'/>
+            <select name="category" id="category">
+              <option value="all">All</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="bird">Bird</option>
+              <option value="other">Other</option>
+            </select>
+          </aside>
+          <section className="mascotas">
+            <h2 className="titulo-secundario">Mascotas</h2>
+            {pets.map((pet) => (
+              <article key={pet.pet_id} className="card">
+              <img className='photo_url' src={pet.photo_url} alt="" />
+              <Link  to={`/mascota/${pet.pet_id}`}>
+                  <h3 className='titulo-secundario title-card'>{pet.name}</h3>
+                </Link>
+              </article>
+            ))}
+          </section>
         </section>
       </Contenedor>
     </Contenido>

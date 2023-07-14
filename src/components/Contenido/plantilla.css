@@ -1,5 +1,5 @@
 .contenido{
-    --bg-contenido: orangered;
+    --bg-contenido: transparent;
     display: grid;
     width: 100%;
     background: var(--bg-contenido);
