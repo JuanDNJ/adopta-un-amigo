@@ -1,0 +1,7 @@
+.mascotas{
+    display: grid;
+    width: 100%;
+    background: darkcyan;
+    grid-auto-flow: row;
+    row-gap: 1rem;
+}

@@ -1,0 +1,10 @@
+.inicio{
+    
+    background: darkcyan;
+}
+.articulo{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    background: rgb(46, 56, 56);
+}

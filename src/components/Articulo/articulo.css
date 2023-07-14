@@ -1,0 +1,8 @@
+.articulo{
+    width: 100%;
+    padding: 60px 1rem;
+    display: grid;
+    place-content: center space-between;
+    background-color: var(--color-primario);
+    color: #333;
+}

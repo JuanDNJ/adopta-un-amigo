@@ -1,0 +1,25 @@
+p.paragraf{
+    padding: 1rem;
+    font-size: 50vmin; 
+    color: var(--color-primario);
+    text-justify: inter-word;
+}
+
+/* MOBILES */
+@media (width < 800px){
+    p.paragraf{
+        font-size: 10vmin;
+    }
+}
+/* Tablets */
+@media (800px < width < 1280px) {
+    p.paragraf{
+        font-size: 50vmin;
+    }
+}
+/* DESKTOP */
+@media ( width > 1280px) {
+    p.paragraf{
+        font-size: 15vmin;
+    }
+}

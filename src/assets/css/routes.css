@@ -1,0 +1,19 @@
+.form-login{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+form{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 3rem 1rem;
+    border-radius: calc(1rem / 3);
+    background: skyblue;
+}

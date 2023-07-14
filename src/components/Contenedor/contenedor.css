@@ -1,0 +1,10 @@
+.contenedor {
+    display: flex;
+    width: var(--max-width-container);
+    margin: 0 auto;
+    /* background-color: yellow; */
+}
+.contenedor.contenedor-cabecera {
+ justify-content: space-between;
+}
+  

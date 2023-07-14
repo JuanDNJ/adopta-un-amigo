@@ -1,0 +1,26 @@
+.navigation{
+    display: none;
+}
+/* MOBILES */
+@media (width < 800px){
+    .navigation{
+        display: none;
+    }
+}
+  /* Tablets */
+@media (800px < width < 1280px) {
+    .navigation{
+        display: none;
+    }
+}
+/* DESKTOP */
+@media ( width > 1280px) {
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        padding: 0 1rem;
+        align-items: center;
+        /* background: var(--color-terciario); */
+    }
+}

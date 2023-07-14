@@ -1,0 +1,8 @@
+.about{
+    display: grid;
+    background: rgb(53, 68, 57);
+    grid-auto-flow: row;
+    row-gap: 1rem;
+    width: 100%;
+    overflow: hidden;
+}

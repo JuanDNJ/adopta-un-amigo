@@ -1,0 +1,6 @@
+.contenido{
+    --bg-contenido: orangered;
+    display: grid;
+    width: 100%;
+    background: var(--bg-contenido);
+}

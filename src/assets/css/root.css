@@ -1,0 +1,34 @@
+:root{
+    --bColor-seccion: rgb(21, 121, 161);
+    --color-primario: rgba(34, 34, 34, 1);
+    --color-secundario: rgba(228, 228, 228, 1);
+    --color-terciario: rgba(255, 251, 0, 1);
+    --color-quaternario: rgba(255, 255, 255, 1);
+    --color-link: rgb(254, 217, 169);
+    --color-link-hover: rgb(255, 205, 205);
+    --color-link-visited: rgb(255, 176, 73);
+    --color-link-visited-hover: rgb(255, 173, 173);
+    --color-link-active: rgb(141, 255, 247);
+    --max-width: 1280px;
+    --max-width-tablet: 976px;
+    --max-width-mobile: 100%;
+}
+
+/* MOBILES */
+@media (width < 800px){
+  :root{
+    --max-width-container: var(--max-width-mobile);
+  }
+}
+  /* Tablets */
+@media (800px < width < 1280px) {
+  :root{
+    --max-width-container: var(--max-width-tablet);
+  }
+}
+/* DESKTOP */
+@media ( width > 1280px) {
+  :root{
+    --max-width-container: var(--max-width);
+  }
+}
