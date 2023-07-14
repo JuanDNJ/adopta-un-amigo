@@ -28,8 +28,8 @@ const Inicio = () => {
     <>
       <Contenido bgColor="transparent">
         {frontPages.map((fPage, index) => (
-          <Portada key={index} photoUrl={fPage.photo_url}>
-            <Banner title={fPage.title} text={fPage.text} color={fPage.color} />
+          <Portada key={index} photoUrl={fPage.photo_url} bg_color={fPage.bg_color}>
+            <Banner title={fPage.title} text={fPage.text} textColor={fPage.text_color} titleColor={fPage.title_color}/>
           </Portada>
         ))}
       </Contenido>

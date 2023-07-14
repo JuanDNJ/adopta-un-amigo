@@ -5,3 +5,8 @@
     grid-auto-flow: row;
     row-gap: 1rem;
 }
+img.photo-url{
+    width: 100vmin;
+    height: 100%;
+    object-fit: cover;
+}
