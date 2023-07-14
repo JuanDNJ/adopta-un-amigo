@@ -1,7 +1,7 @@
 import './mascotas.css'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import {getPets, searchPets} from '../../../api/api-mysql'
+import {getPets, searchPets, selectCatetory} from '../../../api/api-mysql'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import Titulo from '../../../components/Titulo'
@@ -20,6 +20,19 @@ export default function Mascotas () {
     })
     .catch((error) => console.log(error))
   }
+  const hanfdlerChangeSelect = (e) => {
+    console.log(e.target.value)
+    if(e.target.value === 'all'){
+      getPets()
+      .then((data) => setPets(data))
+      .catch((error) => console.log(error))
+    }else{
+      selectCatetory(e.target.value)
+      .then((data) => setPets(data))
+      .catch((error) => console.log(error))
+    }
+  }
+
   useEffect(() => {
     getPets()
       .then((data) => setPets(data))
@@ -31,12 +44,14 @@ export default function Mascotas () {
         <section className="contenido">
           <aside className='filter-pets'>
             <input onInput={handleSearch} type="search" name="search" id="search" placeholder='Search'/>
-            <select name="category" id="category">
+            <select name="category" id="category" onChange={hanfdlerChangeSelect}>
               <option value="all">All</option>
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
-              <option value="bird">Bird</option>
-              <option value="other">Other</option>
+              <option value="dogs">Dog</option>
+              <option value="cats">Cat</option>
+              <option value="birds">Bird</option>
+              <option value="rodents">Rodents</option>
+              <option value="fish">Fish</option>
+              <option value="reptiles">Reptiles</option>
             </select>
           </aside>
           <section className="mascotas">

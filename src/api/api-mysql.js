@@ -9,3 +9,9 @@ export const searchPets = async (search) => {
     const data = await response.json();
     return data;
 }
+
+export const selectCatetory = async (catetory) => {
+    const response = await fetch(`${API_URL}/pets/category/${catetory}`);
+    const data = await response.json();
+    return data;
+}
