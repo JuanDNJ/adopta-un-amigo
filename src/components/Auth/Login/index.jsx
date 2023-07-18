@@ -23,7 +23,7 @@ const Login = () => {
     useAuthLogin(email.value, password.value)
     .then((res) => {
       console.log(res);
-      if(res.is_active === 1){
+      if(res.user.is_active === 1){
         login();  
       }
       
