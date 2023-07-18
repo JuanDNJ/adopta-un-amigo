@@ -23,3 +23,14 @@ export const getCategories = async () => {
     const data = await response.json();
     return data;
 }
+export const useAuthLogin = async (email, password) => {
+    const response = await fetch(`${API_URL}/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email, password})
+    });
+    const data = await response.json();
+    return data;
+}

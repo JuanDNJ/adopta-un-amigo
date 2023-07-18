@@ -4,7 +4,9 @@ import reactLogo from '../../assets/react.svg'
 import Navigation from '../Navigation'
 import Logo from '../Logo'
 import Contenedor from '../Contenedor'
+import { useAuthContext } from '../../contexts/authContext'
 export default function Header () {
+    const { isAuthenticated } = useAuthContext();
   return (
         <header className="main-header">
          
@@ -17,6 +19,8 @@ export default function Header () {
                     <Link to="/about">Quienes somos?</Link>
                     <Link to="/mascotas">Mascotas</Link>
                     <Link to="/contact">Contacto</Link>
+                    {isAuthenticated ? <Link to="/profile">Perfil</Link> : ''}
+                    {!isAuthenticated ? <Link to="/login">Sign In</Link> : <Link to="/profile/logout">Sign Out</Link>}
                 </Navigation>
             </Contenedor>
           
