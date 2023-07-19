@@ -18,7 +18,7 @@ const Inicio = () => {
     getFrontPages().then( // Llamar a la funcion asincrona
       (recor) => {
         if (recor.length === 0) return console.error('No hay portadas') // Si no hay portadas, mostrar error
-        console.log(recor)
+        // console.log(recor)
         setFrontPages(recor) // Guardar las portadas en el estado
       }
     ).catch(err => console.error(err)) // Si hay un error, mostrarlo en consola

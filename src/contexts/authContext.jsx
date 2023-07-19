@@ -24,8 +24,8 @@ export const AuthContextProvider = ({children}) => {
     // Llame useCallbackal nivel superior de su componente
     // para almacenar en caché una definición de función entre renderizaciones
     // https://react.dev/reference/react/useCallback
-    const login = useCallback(() => {
-        window.localStorage.setItem(MY_AUTH_TOKEN, true);
+    const login = useCallback((token) => {
+        window.localStorage.setItem(MY_AUTH_TOKEN, token);
         setIsAuthenticated(true);
     }, []);
     

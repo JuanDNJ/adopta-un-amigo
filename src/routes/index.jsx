@@ -16,8 +16,8 @@ import PrivateRoutes from './privateRoutes'
 // Components
 import Header from '../components/Header'
 import Login from '../components/Auth/Login'
-import Logout from '../components/Auth/Logout'
 
+import NewAccount from '../components/Auth/NewAccount'
 // export APP
 export default function App () {
   return (
@@ -33,11 +33,12 @@ export default function App () {
             <Route path="/mascotas" element={<Mascotas />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/new-account" element={<NewAccount />} />
         </Route>
         <Route path="/profile" element={<PrivateRoutes />}>
           <Route index element={<Profile />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/logout" element={<Logout />} />
+  
         </Route>
         </Routes>
       </BrowserRouter>
