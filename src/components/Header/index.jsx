@@ -4,25 +4,16 @@ import reactLogo from '../../assets/react.svg'
 import Navigation from '../Navigation'
 import Logo from '../Logo'
 import Contenedor from '../Contenedor'
-import Logout from '../Auth/Logout'
+import { useMenuContext } from '../../contexts/menuContext'
 import Userwidtget from '../User/UserWidget'
 import { useAuthContext } from '../../contexts/authContext'
-import { useEffect, useState } from 'react'
+
 
 export default function Header () {
-    let toggle = false
+
     const { isAuthenticated } = useAuthContext();
- 
-    const [open, setOpen] = useState();
-
-    const handlerClick = () => {
-        setOpen(false)
-    }
-    const toParent = (string) => {
-        console.log(string)
-        setOpen(false)
-    }
-
+    const {close} = useMenuContext();
+  
   return (
         <header className="main-header" >
          
@@ -32,14 +23,12 @@ export default function Header () {
                 </Logo>
                 <Navigation>
                     
-                    <Link to="/" onClick={handlerClick}>Inicio</Link>
-                    <Link to="/about" onClick={handlerClick}>Quienes somos?</Link>
-                    <Link to="/mascotas" onClick={handlerClick}>Mascotas</Link>
-                    <Link to="/contact" onClick={handlerClick}>Contacto</Link>
-                    <h1 style={{color: 'red'}}>{open}</h1>
-                    {!isAuthenticated ? <Link to="/login">Sign In</Link> : (<>
-                        <Userwidtget openWidget={open} toParent={toParent}/> 
-                       
+                    <Link to="/" onClick={() => close()}>Inicio</Link>
+                    <Link to="/about" onClick={() => close()}>Quienes somos?</Link>
+                    <Link to="/mascotas" onClick={() => close()}>Mascotas</Link>
+                    <Link to="/contact" onClick={() => close()}>Contacto</Link>
+                    {!isAuthenticated ? <Link to="/login" onClick={() => close()}>Sign In</Link> : (<>
+                        <Userwidtget /> 
                     </>)}
                 </Navigation>
             </Contenedor>
