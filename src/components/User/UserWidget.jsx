@@ -3,15 +3,20 @@ import { users } from "../../api/api-mysql";
 import { useState, useEffect} from "react";
 import { Link } from 'react-router-dom'
 import Logout from "../Auth/Logout";
-const Userwidtget  = () => {
+const Userwidtget  = ({openWidget, toParent}) => {
+  if(openWidget || !openWidget) console.log(openWidget)
   const [user, setUser] = useState()
-  const [isMenuUserToggle, setIsMenuUserToggle] = useState(false)
+  const [isMenuUserToggle, setIsMenuUserToggle] = useState()
   
   const handlerClick = (eve) => {
     console.log('click')
-    setIsMenuUserToggle(!isMenuUserToggle)
+    setIsMenuUserToggle(!openWidget)
+  }
+  const handlerClose = () => {
+
   }
    useEffect(() => {
+    setIsMenuUserToggle(isMenuUserToggle)
     users.getProfile().then((res) => {
       console.log(res)
       setUser(res)
@@ -20,7 +25,7 @@ const Userwidtget  = () => {
       console.error(err)
     }
     )
-  }, [])
+  }, [isMenuUserToggle])
 
   return (
     <section  className='widget'>
@@ -32,7 +37,7 @@ const Userwidtget  = () => {
      }
     
       <ul className={`menu-widtget ${isMenuUserToggle ? 'menu-toggle' : ''}`}>
-        <Link to="/profile">Profile</Link>
+        <Link to="/profile" onClick={() => toParent(isMenuUserToggle)}>Profile</Link>
         <Logout />
       </ul>
     
