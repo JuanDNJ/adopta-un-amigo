@@ -3,3 +3,31 @@
     width: 100%;
     background: darkcyan;
 }
+.contact-info{
+    padding: 3rem ;
+    margin: 0 auto;
+}
+.contact-info > h2{
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+}
+.contact-info > p{
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+button.btn-send{ 
+    width: 10rem;
+}
+button.btn-send:hover{
+    background: var(--color-primario);
+    color: var(--color-secundario);
+}
+form#form-contact{
+    border-radius: 0 ;
+    align-items: flex-end;
+}
+form > input, form > textarea{
+    width: 100%;
+}

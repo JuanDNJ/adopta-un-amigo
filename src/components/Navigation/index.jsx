@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useMenuContext } from '../../contexts/menuContext'
 import { useAuthContext } from '../../contexts/authContext'
 import Userwidtget from '../User/UserWidget'
+
 const Navigation = ({ children }) => {
     const { close } = useMenuContext()
     const { isAuthenticated } = useAuthContext()
