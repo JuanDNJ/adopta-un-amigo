@@ -20,7 +20,7 @@ export default function Contact() {
             <p>
               Si tienes alguna pregunta, comentario o inquietud,
               por favor utiliza el formulario de contacto a
-              continuación para ponerte en constacto con nosotros.
+              continuación para ponerte en contacto con nosotros.
               También puedes llamarnos o enviarnos un correo
               electrónico utilizando los datos de contacto proporcionados
             </p>

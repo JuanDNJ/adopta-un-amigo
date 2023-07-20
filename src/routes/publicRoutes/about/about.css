@@ -1,8 +1,26 @@
 .about{
     display: grid;
-    background: rgb(53, 68, 57);
+    place-content: center;
+    /* background: rgb(53, 68, 57); */
     grid-auto-flow: row;
     row-gap: 1rem;
     width: 100%;
+    padding: 5rem 0;
     overflow: hidden;
+    color: var(--color-primario);
+}
+ul.list-functions{
+    list-style: circle inside;
+    padding: 1rem;
+    margin: 0;
+}
+.titulo-secundario{
+    font-size: 2rem;
+    color: var(--color-primario);
+}
+p{
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    text-align: justify;
+    margin: 0;
 }

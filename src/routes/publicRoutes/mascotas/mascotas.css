@@ -18,7 +18,7 @@
     gap: 1rem;
     padding: 1rem;
     width: 100%;
-    background: darkcyan;
+    /* background: darkcyan; */
 }
 img.photo_url{
     width: 100%;
@@ -36,6 +36,7 @@ article.card{
 }
 .titulo-secundario{
     grid-column: 1 / -1;
+    color: var(--color-primario);
 }
 :is(.title-card){
     color: gray;
