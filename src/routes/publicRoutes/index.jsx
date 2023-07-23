@@ -1,12 +1,9 @@
-import { Outlet, Navigate } from "react-router-dom";
-import { useAuthContext } from "../../contexts/authContext";
+import { Outlet } from "react-router-dom";
 
 const PublicRoutes = () => {
 
   return (
-    <section>
-      <Outlet />
-    </section>
+    <section><Outlet /></section>
   );
 }
 export default PublicRoutes;

@@ -1,0 +1,14 @@
+{
+    "frontPages": [
+         {
+            "front_id": 1,
+            "text": "Facere at pariatur, repellendus nulla, neque dolorem accusamus debitis quasi nostrum nihil perferendis quae quisquam dolorum corporis cumque temporibus quaerat placeat rerum.",
+            "title": "Por que adoptar moock?",
+            "photo_url": "https://firebasestorage.googleapis.com/v0/b/juandfe.appspot.com/o/api%2Fv1%2Fpets%2Fdogs%2Fperros1024x1024.jpg?alt=media&token=e629ebfb-f72a-4d8f-b01c-98a989eb4259",
+            "bg_color": "#223",
+            "text_color": "#fff",
+            "title_color": "#fff"
+         }
+    ],
+    "mascotas": []
+}

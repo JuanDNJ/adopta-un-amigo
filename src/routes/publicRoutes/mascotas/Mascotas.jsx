@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import {getPets, searchPets, selectCatetory} from '../../../api/api-mysql'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
-import Titulo from '../../../components/Titulo'
+import CardPet from './components/CardPet'
 
 
 export default function Mascotas () {
@@ -56,14 +56,7 @@ export default function Mascotas () {
           </aside>
           <section className="mascotas">
             <h2 className="titulo-secundario">Mascotas</h2>
-            {pets.map((pet) => (
-              <article key={pet.pet_id} className="card">
-              <img className='photo_url' src={pet.photo_url} alt="" />
-              <Link  to={`/mascota/${pet.pet_id}`}>
-                  <h3 className='titulo-secundario title-card'>{pet.name}</h3>
-                </Link>
-              </article>
-            ))}
+            {pets.map((pet) => <CardPet pet={pet}/>)}
           </section>
         </section>
       </Contenedor>
