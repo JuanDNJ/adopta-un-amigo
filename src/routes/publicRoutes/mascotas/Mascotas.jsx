@@ -1,15 +1,15 @@
 import './mascotas.css'
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {getPets, searchPets, selectCatetory} from '../../../api/api-mysql'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import CardPet from './components/CardPet'
-
+import moockPets from '../../../api/moock.json'
 
 export default function Mascotas () {
 
   const [pets, setPets] = useState([])
+
  const handleSearch = (e) => {
     console.log(e.target.value)
     searchPets(e.target.value)
@@ -21,15 +21,20 @@ export default function Mascotas () {
     .catch((error) => console.log(error))
   }
   const hanfdlerChangeSelect = (e) => {
-    console.log(e.target.value)
-    if(e.target.value === 'all'){
-      getPets()
-      .then((data) => setPets(data))
-      .catch((error) => console.log(error))
-    }else{
-      selectCatetory(e.target.value)
-      .then((data) => setPets(data))
-      .catch((error) => console.log(error))
+    try {
+      if(e.target.value === 'all'){
+        getPets()
+        .then((data) =>{
+          setPets(data)
+        })
+      }else{
+        selectCatetory(e.target.value)
+        .then((data) => {
+          setPets(data)
+        })
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -56,7 +61,7 @@ export default function Mascotas () {
           </aside>
           <section className="mascotas">
             <h2 className="titulo-secundario">Mascotas</h2>
-            {pets.map((pet) => <CardPet pet={pet}/>)}
+            {pets.map((pet) => <CardPet key={pet.pet_id} pet={pet}/>)}
           </section>
         </section>
       </Contenedor>

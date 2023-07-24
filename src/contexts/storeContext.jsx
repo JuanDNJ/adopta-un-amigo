@@ -5,7 +5,8 @@ import {
   useMemo,
   useState
 } from "react";
-
+import { AuthContextProvider } from "./authContext";
+import { MenuContextProvider } from "./menuContext";
 const CtxStore = new createContext();
 
 export const UseStore = ({ children }) => {
@@ -25,7 +26,15 @@ export const UseStore = ({ children }) => {
     }),
     [up, down, pro]
   );
-  return <CtxStore.Provider value={value}>{children}</CtxStore.Provider>;
+  return (
+    <CtxStore.Provider value={value}>
+      <AuthContextProvider>
+        <MenuContextProvider>
+          {children}
+        </MenuContextProvider>
+      </AuthContextProvider>
+    </CtxStore.Provider>
+  );
 };
 
 

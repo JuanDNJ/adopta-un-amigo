@@ -1,7 +1,5 @@
 import '../assets/css/routes.css'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import { AuthContextProvider } from '../contexts/authContext'
-import { MenuContextProvider } from '../contexts/menuContext'
 import { UseStore } from '../contexts/storeContext'
 // Pages or Routes
 import About from './publicRoutes/about/About'
@@ -22,29 +20,25 @@ import NewAccount from '../components/Auth/NewAccount'
 export default function App() {
   return (
     <UseStore>
-      <AuthContextProvider>
-        <MenuContextProvider>
-          <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/" element={<PublicRoutes />}>
-                <Route index element={<Inicio />} />
-                <Route path="/home" element={<Inicio />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/mascota/:id" element={<MascotaDetail />} />
-                <Route path="/mascotas" element={<Mascotas />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/new-account" element={<NewAccount />} />
-              </Route>
-              <Route path="/profile" element={<PrivateRoutes />}>
-                <Route index element={<Profile />} />
-                <Route path="/profile" element={<Profile />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </MenuContextProvider>
-      </AuthContextProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<PublicRoutes />}>
+            <Route index element={<Inicio />} />
+            <Route path="/home" element={<Inicio />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/mascota/:id" element={<MascotaDetail />} />
+            <Route path="/mascotas" element={<Mascotas />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/new-account" element={<NewAccount />} />
+          </Route>
+          <Route path="/profile" element={<PrivateRoutes />}>
+            <Route index element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </UseStore>
   )
 }

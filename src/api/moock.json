@@ -10,5 +10,146 @@
             "title_color": "#fff"
          }
     ],
-    "mascotas": []
+    "mascotas": [
+        {
+            "pet_id": 1, 
+            "name": "Winter",
+            "photo_url": "https://fotografias.lasexta.com/clipping/cmsimages01/2022/08/09/3FFA8546-05CE-4608-9B69-6602D02A4C58/cachorro-pomsky_103.jpg?crop=1183,887,x0,y0&width=1200&height=900&optimize=low&format=webply",
+            "years": "8",
+            "category": "dogs"
+        },
+        {
+            "pet_id": 2, 
+            "name": "Sunn",
+            "photo_url": "https://estaticos-cdn.prensaiberica.es/clip/823f515c-8143-4044-8f13-85ea1ef58f3a_16-9-discover-aspect-ratio_default_0.jpg",
+            "years": "3",
+            "category": "dogs"
+        },
+        {
+            "pet_id": 3, 
+            "name": "Moonlight",
+            "photo_url": "https://images.unsplash.com/photo-1535591273668-578e31182c4f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjM2NTI5fQ",
+            "years": "1",
+            "category": "fish"
+        },
+        {
+            "pet_id": 4, 
+            "name": "Toby",
+            "photo_url": "https://images.theconversation.com/files/525305/original/file-20230510-15-ol6krl.jpg?ixlib=rb-1.1.0&rect=0%2C552%2C4500%2C2250&q=45&auto=format&w=668&h=324&fit=crop",
+            "years": "1",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 5, 
+            "name": "Sit",
+            "photo_url": "https://www.diariodesevilla.es/2023/05/07/sociedad/Descubre-curiosidades-hamster-mascotas_1790831708_183903754_667x375.jpg",
+            "years": "2",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 6, 
+            "name": "Small",
+            "photo_url": "https://www.elmueble.com/medio/2022/06/09/hamster_b72d1bb0_1200x630.jpg",
+            "years": "3",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 7, 
+            "name": "Black Elles",
+            "photo_url": "https://www.elmueble.com/medio/2022/06/09/hamster_608da04e_1000x686.jpg",
+            "years": "6",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 8, 
+            "name": "Mari",
+            "photo_url": "https://images.hola.com/imagenes/mascotas/20211116199664/hamster-cuanto-tiempo-vive-dn/1-20-137/cuanto-vive-hamster-enfermedades-t.jpg",
+            "years": "1",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 9, 
+            "name": "Jinnx",
+            "photo_url": "https://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg",
+            "years": "2",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 10, 
+            "name": "Jilger",
+            "photo_url": "https://scx2.b-cdn.net/gfx/news/hires/2022/birds-1.jpg",
+            "years": "0.5",
+            "category": "rodents"
+        },
+        {
+            "pet_id": 11, 
+            "name": "Yellow",
+            "photo_url": "https://scx2.b-cdn.net/gfx/news/hires/2022/birds-1.jpg",
+            "years": "5",
+            "category": "birds"
+        },
+        {
+            "pet_id": 12, 
+            "name": "Colorin",
+            "photo_url": "https://media.newyorker.com/photos/5a95a5b13d9089123c9fdb7e/1:1/w_3289,h_3289,c_limit/Petrusich-Dont-Mess-with-the-Birds.jpg",
+            "years": "1",
+            "category": "birds"
+        },
+        {
+            "pet_id": 13, 
+            "name": "Shaco",
+            "photo_url": "https://www.thespruce.com/thmb/8gZkGMzHNAMhbMPY6bbFsLT2Os4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/types-of-birds-of-prey-387307-hero-bbcd393587da4b039f58dfbe4e996cf4.jpg",
+            "years": "2",
+            "category": "birds"
+        },
+        {
+            "pet_id": 14, 
+            "name": "Boby",
+            "photo_url": "https://images.hola.com/imagenes/mascotas/20230428231045/razas-perros-toy/1-242-978/schnauzer-miniatura-m.jpg?tx=w_680",
+            "years": "7",
+            "category": "dogs"
+        },
+        {
+            "pet_id": 15, 
+            "name": "Serpi",
+            "photo_url": "https://www.hospitalveterinariglories.com/wp-content/uploads/2022/03/30-03-22-%C2%BFQue%CC%81-es-la-brumacio%CC%81n-en-los-reptiles-676x451.jpg",
+            "years": "2",
+            "category": "reptiles"
+        },
+        {
+            "pet_id": 16, 
+            "name": "Tobias",
+            "photo_url": "https://www.nationalgeographic.com.es/medio/2022/04/26/camaleon_4fcd8b91_800x800.jpg",
+            "years": "2",
+            "category": "reptiles"
+        },
+        {
+            "pet_id": 17, 
+            "name": "Slow",
+            "photo_url": "https://www.prensa-latina.cu/wp-content/uploads/2022/06/64-A-Las-tortugas-son-animales-anfibios-1.jpg",
+            "years": "15",
+            "category": "reptiles"
+        },
+        {
+            "pet_id": 18, 
+            "name": "Lara",
+            "photo_url": "https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/6/2022/12/shutterstock_781327003-1-768x512.jpg",
+            "years": "1",
+            "category": "cats"
+        },
+        {
+            "pet_id": 19, 
+            "name": "Misino",
+            "photo_url": "https://s01.sgp1.cdn.digitaloceanspaces.com/article/51036-cwobnirfka-1580816618.jpeg",
+            "years": "1",
+            "category": "cats"
+        },
+        {
+            "pet_id": 20, 
+            "name": "Po",
+            "photo_url": "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png",
+            "years": "5",
+            "category": "cats"
+        }
+    ]
 }
