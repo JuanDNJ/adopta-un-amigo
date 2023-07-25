@@ -1,6 +1,9 @@
 .navigation{
     display: none;
 }
+.menu-mobile{
+    display: block;
+}
 /* MOBILES */
 @media (width < 800px){
     .navigation{
@@ -22,5 +25,8 @@
         padding: 0 1rem;
         align-items: center;
         /* background: var(--color-terciario); */
+    }
+    .menu-mobile{
+        display: none;
     }
 }

@@ -1,0 +1,18 @@
+.btnToggle{
+    background: var(--color-terciario);
+}
+
+/* MOBILES */
+@media (width < 800px){
+   
+}
+  /* Tablets */
+@media (800px < width < 1280px) {
+    
+}
+/* DESKTOP */
+@media ( width > 1280px) {
+    .btnToggle{
+       display: none;
+    }
+}

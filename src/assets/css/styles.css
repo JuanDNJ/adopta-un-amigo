@@ -1,12 +1,6 @@
+@import url(./modern-normalize.css);
 @import url(./root.css);
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 ::-webkit-scrollbar {
   width: 0rem;
   height: 0rem;
@@ -28,10 +22,7 @@ body {
   background: #223;
   color: white;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+
 
 textarea,
 input,
