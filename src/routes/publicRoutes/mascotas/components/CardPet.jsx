@@ -7,6 +7,6 @@ const CardPet = ({ pet }) => {
         <h3 className='titulo-secundario title-card'>{pet.name}</h3>
       </Link>
     </article>
-  );
+  )
 }
-export default CardPet;
+export default CardPet

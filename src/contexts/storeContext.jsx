@@ -4,28 +4,38 @@ import {
   useContext,
   useMemo,
   useState
-} from "react";
-import { AuthContextProvider } from "./authContext";
-import { MenuContextProvider } from "./menuContext";
-const CtxStore = new createContext();
+} from 'react'
+import { AuthContextProvider } from './authContext'
+import { MenuContextProvider } from './menuContext'
+
+const CtxStore = createContext()
 
 export const UseStore = ({ children }) => {
-  const [pro, setPro] = useState(0);
+  const [isOpenMenuBars, setIsOpenMenuBars] = useState(false)
 
-  const up = useCallback((payload) => {
-    setPro((pro) => pro + (payload || 1));
-  }, [pro]);
-  const down = useCallback((payload) => {
-    setPro((pro) => pro - (payload || 1));
-  }, [pro]);
+  const toggleMenuBars = useCallback(() => {
+    setIsOpenMenuBars(isOpenMenuBars => !isOpenMenuBars)
+  }, [setIsOpenMenuBars])
+
+  const closeMenuBars = useCallback(() => {
+    setIsOpenMenuBars(false)
+  }, [setIsOpenMenuBars])
+
+  const openMenuBars = useCallback(() => {
+    setIsOpenMenuBars(true)
+  }, [setIsOpenMenuBars])
+
   const value = useMemo(
     () => ({
-      up,
-      down,
-      pro
+      toggleMenuBars,
+      closeMenuBars,
+      openMenuBars,
+      isOpenMenuBars
     }),
-    [up, down, pro]
-  );
+    [isOpenMenuBars, closeMenuBars,
+      openMenuBars, toggleMenuBars]
+  )
+
   return (
     <CtxStore.Provider value={value}>
       <AuthContextProvider>
@@ -34,14 +44,13 @@ export const UseStore = ({ children }) => {
         </MenuContextProvider>
       </AuthContextProvider>
     </CtxStore.Provider>
-  );
-};
-
+  )
+}
 
 export const useStore = () => {
-  const context = useContext(CtxStore);
+  const context = useContext(CtxStore)
   if (context === undefined) {
-    throw new Error("useStore must be used within a UseStore");
+    throw new Error('useStore must be used within a UseStore')
   }
-  return context;
-};
+  return context
+}

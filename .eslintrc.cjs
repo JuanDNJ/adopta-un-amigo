@@ -5,6 +5,7 @@ module.exports = {
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "standard",
+    "eslint-config-prettier",
   ],
   parserOptions: { ecmaVersion: "latest", sourceType: "module", ecmaFeatures: { jsx: true } },
   settings: { react: { version: "18.2" } },
@@ -12,6 +13,6 @@ module.exports = {
   rules: {
     "react-refresh/only-export-components": "warn",
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
+    "camelcase": "warn",
   },
 };

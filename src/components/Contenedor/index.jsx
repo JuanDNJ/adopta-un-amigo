@@ -1,6 +1,6 @@
 import './contenedor.css'
 
-const  Contenedor =  ({ children, cab}) => {
+const Contenedor = ({ children, cab }) => {
   return (
         <section className={`contenedor ${cab ? 'contenedor-cabecera' : ''}`}>
             {children}
@@ -8,4 +8,4 @@ const  Contenedor =  ({ children, cab}) => {
   )
 }
 
-export default  Contenedor
+export default Contenedor

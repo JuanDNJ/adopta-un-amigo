@@ -1,13 +1,13 @@
-import { useAuthContext } from "../../../contexts/authContext";
+import { useAuthContext } from '../../../contexts/authContext'
 const Logout = () => {
-const { logout} = useAuthContext();
- 
+  const { logout } = useAuthContext()
+
   const handlerClick = () => {
-    logout();
+    logout()
   }
 
   return (
     <button type="button" onClick={handlerClick}>Sign Out</button>
-  );
+  )
 }
-export default Logout;
+export default Logout

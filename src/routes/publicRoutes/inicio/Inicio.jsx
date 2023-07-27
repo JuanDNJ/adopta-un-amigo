@@ -4,27 +4,16 @@ import Contenedor from '../../../components/Contenedor'
 import Portada from '../../../components/Portada'
 import Banner from '../../../components/Portada/banner'
 import moock from '../../../api/moock.json'
+import { getFrontPages } from '../../../api/api-mysql'
 import { useState, useEffect } from 'react'
 const Inicio = () => {
   const moockFrontPages = moock.frontPages
   const [frontPages, setFrontPages] = useState(moockFrontPages) // Estado para guardar las portadas
 
-  const getFrontPages = async () => { // Funcion asincrona para obtener las portadas
-    try {
-      // Fetch para obtener las portadas
-      const pages = await fetch(`http://localhost:5174/front-pages`) 
-      const record = await pages.json() // Convertir a JSON
-      return record // Retornar el JSON
-    } catch (err) {
-      throw new Error(err.message)
-    }
-  }
- 
-console.log(moockFrontPages)
   useEffect(() => { // UseEffect se ejecuta despues de que se renderiza el componente
     getFrontPages().then( // Llamar a la funcion asincrona
       (recor) => {
-        if (recor.length === 0) throw new Error("Error de servidores")
+        if (recor.length === 0) throw new Error('Error de servidores')
         setFrontPages(recor) // Guardar las portadas en el estado
       }
     ).catch(err => {
@@ -45,7 +34,7 @@ console.log(moockFrontPages)
         <Contenedor>
           {/* <Banner title={banners[1].title} text={banners[1].text} color={banners[1].color} /> */}
         </Contenedor>
-   
+
       </Contenido>
       <Contenido bgColor="pink">
         <Contenedor>

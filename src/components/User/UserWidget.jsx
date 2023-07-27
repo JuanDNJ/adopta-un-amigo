@@ -1,17 +1,13 @@
 import './userWidget.css'
-import { users } from "../../api/api-mysql"
-import { useState, useEffect } from "react"
+import { users } from '../../api/api-mysql'
+import { useState, useEffect } from 'react'
 import { useMenuContext } from '../../contexts/menuContext'
 import { Link } from 'react-router-dom'
-import Logout from "../Auth/Logout"
+import Logout from '../Auth/Logout'
 const Userwidtget = () => {
-
   const { isMenuToggle, toggle } = useMenuContext()
   const [user, setUser] = useState()
 
-  const handlerClick = () => {
-    open()
-  }
   useEffect(() => {
     users.getProfile().then((res) => {
       // console.log(res)
@@ -38,6 +34,6 @@ const Userwidtget = () => {
       </ul>
 
     </section>
-  );
+  )
 }
 export default Userwidtget

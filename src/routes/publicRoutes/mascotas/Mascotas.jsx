@@ -1,37 +1,35 @@
 import './mascotas.css'
 import { useEffect, useState } from 'react'
-import {getPets, searchPets, selectCatetory} from '../../../api/api-mysql'
+import { getPets, searchPets, selectCatetory } from '../../../api/api-mysql'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import CardPet from './components/CardPet'
-import moockPets from '../../../api/moock.json'
 
 export default function Mascotas () {
-
   const [pets, setPets] = useState([])
 
- const handleSearch = (e) => {
+  const handleSearch = (e) => {
     console.log(e.target.value)
     searchPets(e.target.value)
-    .then((data) => {
-      if(data.length > 0){
-        setPets(data)
-      }
-    })
-    .catch((error) => console.log(error))
+      .then((data) => {
+        if (data.length > 0) {
+          setPets(data)
+        }
+      })
+      .catch((error) => console.log(error))
   }
   const hanfdlerChangeSelect = (e) => {
     try {
-      if(e.target.value === 'all'){
+      if (e.target.value === 'all') {
         getPets()
-        .then((data) =>{
-          setPets(data)
-        })
-      }else{
+          .then((data) => {
+            setPets(data)
+          })
+      } else {
         selectCatetory(e.target.value)
-        .then((data) => {
-          setPets(data)
-        })
+          .then((data) => {
+            setPets(data)
+          })
       }
     } catch (error) {
       console.log(error)
@@ -41,7 +39,7 @@ export default function Mascotas () {
   useEffect(() => {
     getPets()
       .then((data) => setPets(data))
-  },[])
+  }, [])
 
   return (
     <Contenido bgColor={'white'}>

@@ -1,32 +1,30 @@
 import './login.css'
-import {useAuthContext} from '../../../contexts/authContext';
-import { Link } from 'react-router-dom';
-import { Navigate} from 'react-router-dom';
-import { useAuthLogin } from '../../../api/api-mysql';
+import { useAuthContext } from '../../../contexts/authContext'
+import { Link, Navigate } from 'react-router-dom'
+
+import { authLogin } from '../../../api/api-mysql'
 const Login = () => {
-  const {login, isAuthenticated} = useAuthContext();
- 
-  if(isAuthenticated){
-    return <Navigate to="/" />;
+  const { login, isAuthenticated } = useAuthContext()
+
+  if (isAuthenticated) {
+    return <Navigate to="/" />
   }
 
   const handlerSubmit = (eve) => {
-    const {email, password} = eve.target;
-    eve.preventDefault();
-   
-    useAuthLogin(email.value, password.value)
-    .then((res) => {
-      console.log(res);
-      if(res.status !== 200){
-        alert(res.message);
-      }
-      if(res.user && res.user.is_active === 1){
-        login((res.token));  
-      }
-      
-    })
-    .catch((err) => console.error(err.message))
-    
+    const { email, password } = eve.target
+    eve.preventDefault()
+
+    authLogin(email.value, password.value)
+      .then((res) => {
+        console.log(res)
+        if (res.status !== 200) {
+          alert(res.message)
+        }
+        if (res.user && res.user.is_active === 1) {
+          login((res.token))
+        }
+      })
+      .catch((err) => console.error(err.message))
   }
 
   return (
@@ -38,8 +36,8 @@ const Login = () => {
         <button type="submit">Sign In</button>
       </form>
       <Link className="new-account" to="/new-account">You do not have an account?</Link>
-      
+
    </section>
-  );
+  )
 }
-export default Login;
+export default Login

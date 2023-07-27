@@ -5,7 +5,9 @@ import './assets/css/styles.css'
 
 import Routes from './routes'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const adoptaUnAmigo = ReactDOM.createRoot(document.getElementById('root'))
+
+adoptaUnAmigo.render(
   <React.StrictMode>
     <Routes />
   </React.StrictMode>

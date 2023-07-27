@@ -1,9 +1,25 @@
 import styles from './menu-mobile.module.css'
-import { useAuthContext } from '../../../contexts/authContext'
+import { createPortal } from 'react-dom'
+import { useState } from 'react'
+import Menu from '../Menu'
 const MenuMobile = () => {
-    const { isAuthenticated } = useAuthContext()
+  const [open, setOpen] = useState(false)
+
+  const handlerPortal = () => {
+    setOpen(open => !open)
+  }
   return (
-    <button className={styles.btnToggle} type="button">Menu</button>
-  );
+    <>
+    <button className={styles.btnToggle} onClick={handlerPortal} type="button">Menu</button>
+    {open && createPortal(
+      <section className={styles.menuMobile}>
+          <Menu isMenuMobile={true}/>
+          <button onClick={handlerPortal} className={styles.close}>X</button>
+      </section>
+      ,
+      document.body,
+      'menu-mobile'
+    )}</>
+  )
 }
-export default MenuMobile;
+export default MenuMobile

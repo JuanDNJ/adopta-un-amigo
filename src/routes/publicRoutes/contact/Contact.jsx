@@ -2,13 +2,12 @@ import './contacto.css'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import { Link } from 'react-router-dom'
-export default function Contact() {
-
+export default function Contact () {
   const handlerSubmit = (eve) => {
     eve.preventDefault()
     const { email, affair, first_name, message } = eve.target
     console.log({ email: email.value, affair: affair.value, first_name: first_name.value, message: message.value })
-    alert("Mensaje enviado correctamente")
+    alert('Mensaje enviado correctamente')
   }
 
   return (

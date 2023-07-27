@@ -1,0 +1,85 @@
+.navigation{
+    /* background: black; */
+    display: grid;
+    grid-auto-flow: column;
+    width: auto;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+    padding: 0 1rem;
+    background: red;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    background: inherit;
+}
+.menuBars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 40px;
+}
+.bars{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    row-gap: 4px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(255, 255, 255);
+    transition: background  300ms ease-in-out;
+    /* background: rgb(180, 10, 10); */
+}
+.bar{
+    width: 30px;
+    height: 4px;
+    background: white;
+    transition: 0.3s;
+}
+.bars:hover{
+    background: rgb(255, 255, 255);
+}
+.bars:hover .bar{
+    background: rgb(7, 7, 7);
+}
+.bars:active .bar{
+    background: rgb(20, 218, 236);
+}
+.menuMobile{
+    flex-direction: column;
+}
+
+/* MOBILES */
+@media (width < 800px){
+    .descktop{
+        display: none;
+    }
+}
+  /* Tablets */
+@media (800px < width < 1280px) {
+    .descktop{
+        display: none;
+    }
+}
+/* DESKTOP */
+@media ( width > 1280px) {
+    .menuBars{
+        display: none;
+    }
+    .descktop{
+        position: initial;
+        top: initial;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+      }
+}

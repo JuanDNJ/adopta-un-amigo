@@ -17,7 +17,7 @@ import Login from '../components/Auth/Login'
 
 import NewAccount from '../components/Auth/NewAccount'
 // export APP
-export default function App() {
+export default function App () {
   return (
     <UseStore>
       <BrowserRouter>
