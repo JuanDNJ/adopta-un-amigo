@@ -1,4 +1,4 @@
-.navigation{
+.navigation {
     /* background: black; */
     display: grid;
     grid-auto-flow: column;
@@ -9,7 +9,8 @@
     padding: 0 1rem;
     /* background: red; */
 }
-.menu{
+
+.menu {
     position: fixed;
     top: 0;
     display: flex;
@@ -20,14 +21,16 @@
     width: 50%;
     background: inherit;
 }
-.menuBars{
+
+.menuBars {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-height: 40px;
 }
-.bars{
+
+.bars {
     cursor: pointer;
     display: grid;
     grid-template-columns: 1fr;
@@ -37,50 +40,60 @@
     padding: 5px;
     border-radius: 4px;
     border: 1px solid rgb(255, 255, 255);
-    transition: background  300ms ease-in-out;
+    transition: background 300ms ease-in-out;
     /* background: rgb(180, 10, 10); */
 }
-.bar{
+
+.bar {
     width: 30px;
     height: 4px;
     background: white;
     transition: 0.3s;
 }
-.bars:hover{
+
+.bars:hover {
     background: rgb(255, 255, 255);
 }
-.bars:hover .bar{
+
+.bars:hover .bar {
     background: rgb(7, 7, 7);
 }
-.bars:active .bar{
+
+.bars:active .bar {
     background: rgb(20, 218, 236);
 }
-.menuMobile{
+
+.menuMobile {
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 /* MOBILES */
-@media (width < 800px){
-    .descktop{
+@media (width < 800px) {
+    .descktop {
         display: none;
     }
 }
-  /* Tablets */
+
+/* Tablets */
 @media (800px < width < 1280px) {
-    .descktop{
+    .descktop {
         display: none;
     }
 }
+
 /* DESKTOP */
-@media ( width > 1280px) {
-    .menuBars{
+@media (width > 1280px) {
+    .menuBars {
         display: none;
     }
-    .descktop{
+
+    .descktop {
         position: initial;
         top: initial;
         flex-direction: row;
         width: 100%;
         height: auto;
-      }
+    }
 }

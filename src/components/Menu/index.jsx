@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 import { createPortal } from 'react-dom'
 import Userwidtget from '../User/UserWidget'
 import { useEffect, useState } from 'react'
-
+import { useMenuContext } from '../../contexts/menuContext'
 export const MenuBars = () => {
+  
   const { toggleMenuBars } = useStore()
   return (
     <section className={styles.menuBars}>
@@ -20,19 +21,24 @@ export const MenuBars = () => {
 }
 
 export const Menu = ({ isMobile }) => {
+
   const { isAuthenticated } = useAuthContext()
-  const { isOpenMenuBars, closeMenuBars } = useStore(false)
+  const { close } = useMenuContext()
+  const { closeMenuBars } = useStore(false)
+
   return (
-    <section className={`${styles.menu} ${isMobile ? styles.menuMobile : styles.descktop}`} onClick={closeMenuBars}>
-      <Link to="/" >Inicio</Link>
-      <Link to="/about" >Quienes somos?</Link>
-      <Link to="/mascotas" >Mascotas</Link>
-      <Link to="/contact" >Contacto</Link>
-      {!isAuthenticated ? <Link to="/login" >Sign In</Link> : <Userwidtget />}
+    <section className={`${styles.menu} ${isMobile ? styles.menuMobile : styles.descktop}`} onClick={() => closeMenuBars()}>
+      <Link to="/" onClick={() => close()}>Inicio</Link>
+      <Link to="/about" onClick={() => close()}>Quienes somos?</Link>
+      <Link to="/mascotas" onClick={() => close()}>Mascotas</Link>
+      <Link to="/contact" onClick={() => close()}>Contacto</Link>
+      {!isAuthenticated && <Link to="/login" onClick={() => close()}>Sign In</Link>}
     </section>)
 }
 
 const Nav = () => {
+
+  const { isAuthenticated } = useAuthContext()
   const { isOpenMenuBars, closeMenuBars } = useStore(false)
   useEffect(() => {
     closeMenuBars()
@@ -50,6 +56,7 @@ const Nav = () => {
           <Menu isMobile={false} />
         )
       }
+      {isAuthenticated && <Userwidtget />}
       <MenuBars />
     </nav>
   )
