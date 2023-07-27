@@ -1,0 +1,26 @@
+.navigation {
+  /* background: black; */
+  display: grid;
+  grid-auto-flow: column;
+  width: auto;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  padding: 0 1rem;
+  /* background: red; */
+}
+
+/* MOBILES */
+@media (width < 800px) {
+  
+}
+
+/* Tablets */
+@media (800px < width < 1280px) {
+  
+}
+
+/* DESKTOP */
+@media (width > 1280px) {
+ 
+}

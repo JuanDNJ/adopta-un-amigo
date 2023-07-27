@@ -1,7 +1,7 @@
 import styles from './header.module.css'
 import reactLogo from '../../assets/react.svg'
 // import Navigation from '../Navigation'
-import Nav from '../Menu'
+import Nav from '../Navigation'
 import Logo from '../Logo'
 import Contenedor from '../Contenedor'
 
