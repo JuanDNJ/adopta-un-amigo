@@ -1,0 +1,12 @@
+.filterForm{
+    display: flex;
+    flex-direction: row;
+    place-content: space-between;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+.filterForm > input[name='search']{
+    width: 33%;
+ 
+}

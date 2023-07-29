@@ -27,7 +27,7 @@ export default function App () {
             <Route index element={<Inicio />} />
             <Route path="/home" element={<Inicio />} />
             <Route path="/about" element={<About />} />
-            <Route path="/mascota/:id" element={<MascotaDetail />} />
+            <Route path="/mascota/:mascota_id" element={<MascotaDetail />} />
             <Route path="/mascotas" element={<Mascotas />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />

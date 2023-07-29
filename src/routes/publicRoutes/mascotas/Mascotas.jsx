@@ -1,68 +1,45 @@
-import './mascotas.css'
+import styles from './mascotas.module.css'
 import { useEffect, useState } from 'react'
-import { getPets, searchPets, selectCatetory } from '../../../api/api-mysql'
+import {  getPets } from '../../../api/api-mysql'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
-import CardPet from './components/CardPet'
+import CardPet from './components/CardPet/CardPet'
+import FilterPets from './components/Forms/Filter'
 
-export default function Mascotas () {
+export default function Mascotas() {
   const [pets, setPets] = useState([])
 
-  const handleSearch = (e) => {
-    console.log(e.target.value)
-    searchPets(e.target.value)
-      .then((data) => {
-        if (data.length > 0) {
-          setPets(data)
-        }
-      })
-      .catch((error) => console.log(error))
+  const search = (data) => {
+    setPets(data)
   }
-  const hanfdlerChangeSelect = (e) => {
-    try {
-      if (e.target.value === 'all') {
-        getPets()
-          .then((data) => {
-            setPets(data)
-          })
-      } else {
-        selectCatetory(e.target.value)
-          .then((data) => {
-            setPets(data)
-          })
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+ const selectCat = (data) => {
+   setPets(data)
+ }
+
+  const allPets = pets.map((pet) => <CardPet key={pet.pet_id} pet={pet} />)
 
   useEffect(() => {
     getPets()
       .then((data) => setPets(data))
+   
   }, [])
 
   return (
+
     <Contenido bgColor={'white'}>
       <Contenedor>
-        <section className="contenido">
-          <aside className='filter-pets'>
-            <input onInput={handleSearch} type="search" name="search" id="search" placeholder='Search'/>
-            <select name="category" id="category" onChange={hanfdlerChangeSelect}>
-              <option value="all">All</option>
-              <option value="dogs">Dog</option>
-              <option value="cats">Cat</option>
-              <option value="birds">Bird</option>
-              <option value="rodents">Rodents</option>
-              <option value="fish">Fish</option>
-              <option value="reptiles">Reptiles</option>
-            </select>
+        <section className={styles.contenido}>
+          <aside className={styles.filterPets}>
+            <FilterPets search={search} selectCat={selectCat} />
           </aside>
-          <section className="mascotas">
-            <h2 className="titulo-secundario">Mascotas</h2>
-            {pets.map((pet) => <CardPet key={pet.pet_id} pet={pet}/>)}
+          <section className={styles.mascotas}>
+            <h2 className={styles.tituloSecundario}>Mascotas</h2>
+            {allPets}
           </section>
         </section>
       </Contenedor>
     </Contenido>
+    
   )
+
 }

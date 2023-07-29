@@ -17,6 +17,19 @@ export const getPets = async () => {
     throw new TypeError(error.message) //
   }
 }
+export const getPet = async (id) => {
+  try {
+    const response = await fetch(new Request(`${API_URL}/pets/pet/${id}`), {
+      method: 'GET'
+    })
+    // infoResponse()
+    checkError(response)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    throw new TypeError(error.message) //
+  }
+}
 export const searchPets = async (search) => {
   const response = await fetch(`${API_URL}/pets/${search}`)
   const data = await response.json()
@@ -32,10 +45,13 @@ export const selectCatetory = async (catetory) => {
 // get categories
 
 export const getCategories = async () => {
-  const response = await fetch(`${API_URL}/categories`)
+  const response = await fetch(`${API_URL}/categories`,{
+    method: 'GET'
+  })
   const data = await response.json()
   return data
 }
+
 export const authLogin = async (email, password) => {
   const response = await fetch(`${API_URL}/login`, {
     method: 'POST',
