@@ -10,6 +10,20 @@ const Inicio = () => {
   const moockFrontPages = moock.frontPages
   const [frontPages, setFrontPages] = useState(moockFrontPages) // Estado para guardar las portadas
 
+  const pageACtive = frontPages.map((fPage, index) => {
+    if (fPage.active === 0) {
+      return (
+        <strong>No tenemos ningun front page activo</strong>
+      )
+    } else {
+      return (
+        <Portada key={index} photoUrl={fPage.photo_url} bg_color={fPage.bg_color}>
+          <Banner title={fPage.title} text={fPage.text} textColor={fPage.text_color} titleColor={fPage.title_color} />
+        </Portada>
+      )
+    }
+
+  })
   useEffect(() => { // UseEffect se ejecuta despues de que se renderiza el componente
     getFrontPages().then( // Llamar a la funcion asincrona
       (recor) => {
@@ -24,33 +38,16 @@ const Inicio = () => {
   return ( // JSX
     <>
       <Contenido bgColor="transparent">
-        {frontPages.map((fPage, index) => (
-          <Portada key={index} photoUrl={fPage.photo_url} bg_color={fPage.bg_color}>
-            <Banner title={fPage.title} text={fPage.text} textColor={fPage.text_color} titleColor={fPage.title_color} />
-          </Portada>
-        ))}
+        {pageACtive}
       </Contenido>
+      
       <Contenido bgColor="white">
         <Contenedor>
           {/* <Banner title={banners[1].title} text={banners[1].text} color={banners[1].color} /> */}
         </Contenedor>
 
       </Contenido>
-      <Contenido bgColor="pink">
-        <Contenedor>
-          <section className="mascotas">
-            {/* <Banner title={banners[0].title} text={banners[0].text} color={banners[0].color} /> */}
-            <ul className="cards">
-              <li className="card">Perros</li>
-              <li>Gatos</li>
-              <li>Conejos</li>
-              <li>Pajaros</li>
-              <li>Reptiles</li>
-              <li>Peces</li>
-            </ul>
-          </section>
-        </Contenedor>
-      </Contenido>
+      
     </>
   )
 }
