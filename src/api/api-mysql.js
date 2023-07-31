@@ -6,7 +6,7 @@ import { selectCatetory, getCategories } from './categories'
 import { authLogin, newAccount } from './auth'
 import { users } from './users'
 import {getFrontPages} from './front-pages'
-
+import { getBanners } from './banners'
 
 export {
   getPet,
@@ -17,5 +17,6 @@ export {
   authLogin,
   newAccount,
   users,
-  getFrontPages
+  getFrontPages,
+  getBanners
 }

@@ -1,0 +1,10 @@
+.mainFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainFooter > p {
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+}

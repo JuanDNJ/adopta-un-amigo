@@ -4,8 +4,10 @@ import Contenedor from '../../../components/Contenedor'
 import Portada from '../../../components/Portada'
 import Banner from '../../../components/Portada/banner'
 import moock from '../../../api/moock.json'
-import { getFrontPages } from '../../../api/api-mysql'
+
+import { getFrontPages, getBanners } from '../../../api/api-mysql'
 import { useState, useEffect } from 'react'
+
 const Inicio = () => {
   const moockFrontPages = moock.frontPages
   const [frontPages, setFrontPages] = useState(moockFrontPages) // Estado para guardar las portadas
@@ -17,13 +19,27 @@ const Inicio = () => {
       )
     } else {
       return (
-        <Portada key={index} photoUrl={fPage.photo_url} bg_color={fPage.bg_color}>
-          <Banner title={fPage.title} text={fPage.text} textColor={fPage.text_color} titleColor={fPage.title_color} />
-        </Portada>
+        <Contenido key={fPage.front_id} bgColor="transparent">
+          <Portada  photoUrl={fPage.photo_url} bg_color={fPage.bg_color}>
+            <Banner title={fPage.title} text={fPage.text} textColor={fPage.text_color} titleColor={fPage.title_color} />
+          </Portada>
+        </Contenido>
       )
     }
 
   })
+
+  const [banners, setBanners] = useState([]) // Estado para guardar los banners
+
+  const allBanners = banners.map((banner, index) => (
+    <Contenido key={banner.banner_id} bgColor="white">
+      <Contenedor>
+        <Banner title={banner.title} text={banner.text} textColor={banner.text_color} titleColor={banner.title_color} />
+      </Contenedor>
+    </Contenido>
+
+  ))
+
   useEffect(() => { // UseEffect se ejecuta despues de que se renderiza el componente
     getFrontPages().then( // Llamar a la funcion asincrona
       (recor) => {
@@ -33,21 +49,16 @@ const Inicio = () => {
     ).catch(err => {
       console.error(err.message)
     }) // Si hay un error, mostrarlo en consola
+    getBanners().then(record => {
+      setBanners(record)
+    })
+
   }, []) // El arreglo vacio es para que solo se ejecute una vez
 
   return ( // JSX
     <>
-      <Contenido bgColor="transparent">
-        {pageACtive}
-      </Contenido>
-      
-      <Contenido bgColor="white">
-        <Contenedor>
-          {/* <Banner title={banners[1].title} text={banners[1].text} color={banners[1].color} /> */}
-        </Contenedor>
-
-      </Contenido>
-      
+      {pageACtive}
+      {allBanners}
     </>
   )
 }
