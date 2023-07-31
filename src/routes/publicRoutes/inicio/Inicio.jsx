@@ -2,7 +2,7 @@ import './inicio.css'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import Portada from '../../../components/Portada'
-import Banner from '../../../components/Portada/banner'
+import Banner from '../../../components/Portada/components/Banner/banner'
 import moock from '../../../api/moock.json'
 
 import { getFrontPages, getBanners } from '../../../api/api-mysql'
@@ -34,7 +34,7 @@ const Inicio = () => {
   const allBanners = banners.map((banner, index) => (
     <Contenido key={banner.banner_id} bgColor="white">
       <Contenedor>
-        <Banner title={banner.title} text={banner.text} textColor={banner.text_color} titleColor={banner.title_color} />
+        <Banner fullHeight title={banner.title} text={banner.text} textColor={banner.text_color} titleColor={banner.title_color} />
       </Contenedor>
     </Contenido>
 
