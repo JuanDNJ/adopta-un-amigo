@@ -17,9 +17,8 @@ const MascotaDetail = () => {
   }, [])
   
   return (
-        <article className={styles.petDetail}>
+        <article id={pet.pet_id} className={styles.petDetail}>
             <h1>Detalles de la mascota {pet.name}</h1>
-            <div>El id de la mascota es: {pet.pet_id}</div>
             <div>Categoria: {pet.category}</div>
             <div>Años: {pet.years}</div>
             <img src={pet.photo_url} alt={`Foto mascota`} />

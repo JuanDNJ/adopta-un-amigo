@@ -1,0 +1,23 @@
+button{
+  border: none;
+}
+.btn{
+    background:rgb(0,0,0);
+    color: rgba(255,255,255,.8);
+}
+.icono{
+    width: 30px;
+    height: 30px;
+    background:transparent;
+    color: initial;
+    cursor: pointer;
+}
+.submit{
+    background:rgb(145, 255, 161);
+    color: rgba(43, 43, 43, 0.8);
+}
+img.iconoImg{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}

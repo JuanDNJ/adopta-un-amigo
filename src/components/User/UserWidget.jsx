@@ -5,7 +5,8 @@ import { useMenuContext } from '../../contexts/menuContext'
 import { Link } from 'react-router-dom'
 import { useStore } from '../../contexts/storeContext'
 import Logout from '../Auth/Logout'
-
+import Icono from '../Icono'
+import accountCircle from '../../assets/svg/account_circle_FILL0_wght400_GRAD0_opsz48.svg'
 const Userwidtget = () => {
 
   const { isMenuToggle, toggle } = useMenuContext()
@@ -33,9 +34,11 @@ const Userwidtget = () => {
 
     <section className='widget'>
       {user
-        ? <div className="user-box" onClick={handlerClose} >
-          <h2 className="user-handle" style={{ color: user.is_active ? 'skyblue' : 'darkred' }}>{user.user_handle}</h2>
-        </div>
+        ?
+          <Icono typeBtn="icono">
+            <img className='iconoImg' src={accountCircle} onClick={handlerClose} alt="Facebook" title='Facebook' />
+          </Icono>
+       
         : ''
       }
 
