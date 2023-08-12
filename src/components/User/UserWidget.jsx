@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { useStore } from '../../contexts/storeContext'
 import Logout from '../Auth/Logout'
 import Icono from '../Icono'
-import accountCircle from '../../assets/svg/account_circle_FILL0_wght400_GRAD0_opsz48.svg'
+import accountCircle from '../../assets/svg/account_circle.svg'
 const Userwidtget = () => {
 
   const { isMenuToggle, toggle } = useMenuContext()

@@ -12,13 +12,6 @@ export default function Header() {
             <Contenedor cab={true}>
                 <Logo titleWeb="Adopta un amigo">
                     <img src={reactLogo} alt="Logo de empresa" />
-                    <Icono typeBtn="icono">
-                        <img className='iconoImg' src={accountCircle} alt="Facebook" title='Facebook' />
-                    </Icono>
-                    <Icono typeBtn="icono">
-                        <img className='iconoImg' src={facebook} alt="Facebook" title='Facebook' />
-                    </Icono>
-                   
                 </Logo>
                 <Nav />
                 {/* <Navigation /> */}
