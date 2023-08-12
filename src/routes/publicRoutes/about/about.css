@@ -8,6 +8,36 @@
     padding: 5rem 0;
     overflow: hidden;
     color: var(--color-primario);
+    padding: 1rem;
+}
+.vets{
+    display: flex;
+    flex-direction: column;
+}
+.listVets{
+    display: flex;
+    flex-direction: row; 
+    padding: 1rem;
+    gap: .5rem;
+}
+.vet{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+.vet > strong{
+    font-size: small;
+    color: var(--color-primario);
+    text-align: center;
+}
+
+.photoVet{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: pink;
+    border: 2px solid var(--color-primario);
 }
 ul.list-functions{
     list-style: circle inside;

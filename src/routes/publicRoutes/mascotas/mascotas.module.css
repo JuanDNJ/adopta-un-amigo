@@ -25,13 +25,34 @@
     color: var(--color-primario);
 }
 .petDetail{
-    display: flex;
-    flex-direction: row;
-    place-content: center;
-    place-items: center;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
     width: 100%;
     padding: 1rem;
     gap: 1rem;
+}
+.photoPetDetail{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    background: #333;
+}
+.footerDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
 }
 .docPet{
     background: #333;
@@ -41,9 +62,24 @@
     padding: 1rem;
     gap: 1rem;
 }
-.photoPet{
-    width: 100%;
-    max-height: 980px;
-    object-fit: cover;
-    object-position: center;
+
+.namePet{
+    color: var(--color-link-visited-hover);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+@media screen and (min-width: 768px){
+    .petDetail{
+        grid-auto-flow: column;
+        grid-template-columns: 1fr .25fr;
+        
+    }
+    .docPet{
+        align-items: center;
+    }
+    .photoPetDetail{
+        max-width: 75%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
