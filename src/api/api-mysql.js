@@ -7,6 +7,7 @@ import { authLogin, newAccount } from './auth'
 import { users } from './users'
 import {getFrontPages} from './front-pages'
 import { getBanners } from './banners'
+import { getDocsPets, getDocPet } from './docs-pets'
 
 export {
   getPet,
@@ -18,5 +19,7 @@ export {
   newAccount,
   users,
   getFrontPages,
-  getBanners
+  getBanners,
+  getDocsPets, 
+  getDocPet
 }
