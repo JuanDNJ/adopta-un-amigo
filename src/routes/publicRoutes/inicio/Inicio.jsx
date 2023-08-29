@@ -44,7 +44,7 @@ const Inicio = () => {
     getFrontPages().then( // Llamar a la funcion asincrona
       (recor) => {
         if (recor.length === 0) throw new Error('Error de servidores')
-        setFrontPages(recor) // Guardar las portadas en el estado
+        setFrontPages(() => recor) // Guardar las portadas en el estado
       }
     ).catch(err => {
       console.error(err.message)
