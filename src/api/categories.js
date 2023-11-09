@@ -8,7 +8,7 @@ export const selectCatetory = async (catetory) => {
 // get categories
 
 export const getCategories = async () => {
-    const response = await fetch(`${API_URL}/categories`, {
+    const response = await fetch(`${API_URL}/pets/categories`, {
         method: 'GET'
     })
     const data = await response.json()

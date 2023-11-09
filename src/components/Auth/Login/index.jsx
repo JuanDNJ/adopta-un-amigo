@@ -17,18 +17,19 @@ const Login = () => {
     authLogin(email.value, password.value)
       .then((res) => {
         console.log(res)
-        if (res.status !== 200) {
-          alert(res.message)
-        }
-        if (res.user && res.user.is_active === 1) {
-          login((res.token))
-        }
+        // if (res.status !== 200) {
+        //   alert(res)
+        // }
+        login((res.token))
+        // if (res.user && res.user.is_active === 1) {
+        //   login((res.token))
+        // }
       })
       .catch((err) => console.error(err.message))
   }
 
   return (
-   <section className="form-login">
+    <section className="form-login">
       <h1>Login</h1>
       <form onSubmit={handlerSubmit}>
         <input type="email" name="email" id="email" placeholder='Insert your email address' />
@@ -37,7 +38,7 @@ const Login = () => {
       </form>
       <Link className="new-account" to="/new-account">You do not have an account?</Link>
 
-   </section>
+    </section>
   )
 }
 export default Login

@@ -1,6 +1,6 @@
 import { API_URL } from '../consts'
 export const authLogin = async (email, password) => {
-    const response = await fetch(`${API_URL}/login`, {
+    const response = await fetch(`${API_URL}/authentification/signin`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ export const authLogin = async (email, password) => {
 
 export const newAccount = async (user) => {
     const { user_handler, email, password } = user
-    const response = await fetch(`${API_URL}/register`, {
+    const response = await fetch(`${API_URL}/authorization/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
