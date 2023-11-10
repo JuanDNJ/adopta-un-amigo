@@ -7,17 +7,16 @@ import { getVets } from '../../../api/vets'
 export default function About() {
 
     const [allVets, setAllVets] = useState([]);
+
     useEffect(() => {
         getVets()
             .then((data) => setAllVets(data.vets));
     }, []);
-    // const { message, vets } = allVets
-    // console.log(allVets.map((vet, i) => console.log(vet)))
-    // vets.map((vet) => { console.log(vet) })
+
     const renderVets = allVets.map((vet) => {
         return (
             <div className='vet' key={vet.idVet}>
-                <img src={'./images/jpg/' + vet.photoUrl} className='photoVet' alt={`Foto de ${vet.name}`} title={`Foto de ${vet.name}`} />
+                <img src={'./images/jpg/veterinarios/' + vet.photoUrl} className='photoVet' alt={`Foto de ${vet.name}`} title={`Foto de ${vet.name}`} />
                 <strong>{vet.name}</strong>
             </div>
         )

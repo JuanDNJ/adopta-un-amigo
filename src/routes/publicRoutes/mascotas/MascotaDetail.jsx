@@ -31,7 +31,7 @@ const MascotaDetail = () => {
       <Contenedor>
         <article id={pet.pet_id} className={styles.petDetail}>
           <div className={styles.detail}>
-            <img className={styles.photoPetDetail} src={pet.photo_url} alt={`Foto mascota`} />
+            <img className={styles.photoPetDetail} src={'../images/jpg/mascotas/' + pet.photo_url} alt={`Foto mascota`} />
             <h2 className={styles.namePet}>{pet.name}</h2>
             <p>{pet.description}</p>
             <footer className={styles.footerDetail}>
