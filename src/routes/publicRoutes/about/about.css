@@ -17,6 +17,9 @@
 .listVets{
     display: flex;
     flex-direction: row; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     padding: 1rem;
     gap: .5rem;
 }
@@ -32,8 +35,8 @@
 }
 
 .photoVet{
-    width: 64px;
-    height: 64px;
+    width: 128px;
+    height: 128px;
     object-fit: cover;
     border-radius: 50%;
     background: pink;
@@ -47,6 +50,8 @@ ul.list-functions{
 .titulo-secundario{
     font-size: 2rem;
     color: var(--color-primario);
+    text-align: center;
+    margin-bottom: 40px;
 }
 p{
     color: var(--color-primario);

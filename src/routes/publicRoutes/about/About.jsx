@@ -49,25 +49,9 @@ export default function About() {
                         </ul>
                     </article>
                     <article className='vets'>
-                        <h2 className="titulo-secundario">Veterinarios</h2>
+                        <h2 className="titulo-secundario">Veterinari@s</h2>
                         <div className="listVets">
                             {renderVets}
-                            {/* <div className='vet'>
-                                <img src="#" className='photoVet' alt="Photo veterinari@" />
-                                <strong>Emilio Santacruz</strong>
-                            </div>
-                            <div className='vet'>
-                                <img src="#" className='photoVet' alt="Photo veterinari@" />
-                                <strong>Erika Peterson</strong>
-                            </div>
-                            <div className='vet'>
-                                <img src="#" className='photoVet' alt="Photo veterinari@" />
-                                <strong>Ebaristo Hernandez</strong>
-                            </div>
-                            <div className='vet'>
-                                <img src="#" className='photoVet' alt="Photo veterinari@" />
-                                <strong>Mª Angeles Ortiz</strong>
-                            </div> */}
                         </div>
                     </article>
                 </section>
