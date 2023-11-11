@@ -1,6 +1,6 @@
 import { API_URL } from '../consts'
 export const selectCatetory = async (catetory) => {
-    const response = await fetch(`${API_URL}/pets/category/${catetory}`)
+    const response = await fetch(`${API_URL}/pets/bycategorie/${catetory}`)
     const data = await response.json()
     return data
 }

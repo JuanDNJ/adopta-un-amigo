@@ -29,7 +29,7 @@ export const getPet = async (id) => {
   }
 }
 export const searchPets = async (search) => {
-  const response = await fetch(`${API_URL}/pets/${search}`)
+  const response = await fetch(`${API_URL}/pets/search/${search}`)
   const data = await response.json()
   return data
 }

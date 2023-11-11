@@ -9,13 +9,17 @@ const FilterPets = ({ search, selectCat }) => {
     const handleSearch = (e) => {
         const { target } = e
         console.log(target.value)
-        searchPets(target.value)
-            .then((data) => {
-                if (data.length > 0) {
-                    search(data)
-                }
-            })
-            .catch((error) => console.log(error))
+        if (target.value.length > 0) {
+            searchPets(target.value)
+                .then((data) => {
+                    if (data.length > 0) {
+                        search(data)
+                    }
+                })
+                .catch((error) => console.log(error))
+        } else {
+            return
+        }
     }
 
     const hanfdlerChangeSelect = (e) => {
