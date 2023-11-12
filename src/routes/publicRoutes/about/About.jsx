@@ -3,31 +3,31 @@ import { useState, useEffect } from 'react'
 import Contenido from '../../../components/Contenido'
 import Contenedor from '../../../components/Contenedor'
 import { getVets } from '../../../api/vets'
-
-export default function About() {
+import Vet from './Vet';
+import Titulo from '../../../components/Titulo'
+const About = () => {
 
     const [allVets, setAllVets] = useState([]);
 
     useEffect(() => {
         getVets()
-            .then((data) => setAllVets(data.vets));
+            .then((data) => setAllVets(data));
     }, []);
 
     const renderVets = allVets.map((vet) => {
-        return (
-            <div className='vet' key={vet.idVet}>
-                <img src={'./images/jpg/veterinarios/' + vet.photoUrl} className='photoVet' alt={`Foto de ${vet.name}`} title={`Foto de ${vet.name}`} />
-                <strong>{vet.name}</strong>
-            </div>
-        )
+        return (<Vet key={vet.idVet} vet={vet} />)
     })
-
+    const custom = {
+        textAlign: 'center',
+        color: 'gray',
+        padding: '80px 0px 60px 0px',
+    }
     return (
         <Contenido bgColor="white">
             <Contenedor>
                 <section className="about">
                     <article>
-                        <h2 className="titulo-secundario">Quienes somos?</h2>
+                        <Titulo customStyle={custom} lvlTwo={true} texto="Quienes somos?" />
                         <p>
                             Las protectoras de animales son asociaciones sin
                             ánimo de lucro que se dedican a la protección
@@ -35,7 +35,7 @@ export default function About() {
                         </p>
                     </article>
                     <article>
-                        <h2 className="titulo-secundario">Entre sus funciones se encuentran: </h2>
+                        <Titulo customStyle={custom} lvlTwo={true} texto="Entre sus funciones se encuentran:" />
                         <ul className='list-functions'>
                             <li>Rescatar animales abandonados o en peligro.</li>
                             <li>Mantener y cuidar a los animales.</li>
@@ -48,7 +48,8 @@ export default function About() {
                         </ul>
                     </article>
                     <article className='vets'>
-                        <h2 className="titulo-secundario">Veterinari@s</h2>
+                        <Titulo customStyle={custom} lvlTwo={true} texto="Veterinari@s" />
+                        {/* <h2 className="titulo-secundario">Veterinari@s</h2> */}
                         <div className="listVets">
                             {renderVets}
                         </div>
@@ -58,3 +59,6 @@ export default function About() {
         </Contenido>
     )
 }
+
+
+export default About;

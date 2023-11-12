@@ -1,14 +1,16 @@
-import './titulo.css'
-export default function Titulo (props) {
-  const { texto, lvlOne, lvlTwo, lvlThree, lvlFour, lvlFive, lvlSix, colorH1, colorH2, colorH3, colorH4, colorH5, colorH6, classNameTitulo } = props
+import styles from './titulo.module.css'
 
+const Titulo = (props) => {
+  const { customStyle, texto, lvlOne, lvlTwo, lvlThree, lvlFour, lvlFive, lvlSix } = props
   return <>
-            {lvlOne && <h1 className="levelOne" style={{ '--color-lvl-1': colorH1 ?? '--color-titulo-nivel-1' }}>{texto}</h1>}
-            {lvlTwo && <h2 className={`levelTwo ${classNameTitulo}`} style={{ '--color-lvl-2': colorH2 ?? '-color-titulo-nivel-2' }}>{texto}</h2>}
-            {lvlThree && <h3 className="levelThree" style={{ '--color-lvl-3': colorH3 ?? '-color-titulo-nivel-3' }}>{texto}</h3>}
-            {lvlFour && <h4 className="levelFour" style={{ '--color-lvl-4': colorH4 ?? '-color-titulo-nivel-4' }}>{texto}</h4>}
-            {lvlFive && <h5 className="levelFive" style={{ '--color-lvl-5': colorH5 ?? '-color-titulo-nivel-5' }}>{texto}</h5>}
-            {lvlSix && <h6 className="levelSix" style={{ '--color-lvl-6': colorH6 ?? '-color-titulo-nivel-6' }}>{texto}</h6>}
-            {!lvlOne && !lvlTwo && !lvlThree && !lvlFour && !lvlFive && !lvlSix && <h1 className="levelOne" style={{ '--color-lvl-1': colorH1 ?? '--color-titulo-nivel-1' }}>{texto}</h1>}
-    </>
+    {lvlOne && <h1 styles={customStyle} className={styles.lvlOne}>{texto}</h1>}
+    {lvlTwo && <h2 style={customStyle} className={styles.lvlTwo}>{texto}</h2>}
+    {lvlThree && <h3 style={customStyle} className={styles.lvlThree}>{texto}</h3>}
+    {lvlFour && <h4 style={customStyle} className={styles.lvlFour}>{texto}</h4>}
+    {lvlFive && <h5 style={customStyle} className={styles.lvlFive}>{texto}</h5>}
+    {lvlSix && <h6 style={customStyle} className={styles.lvlSix}>{texto}</h6>}
+    {!lvlOne && !lvlTwo && !lvlThree && !lvlFour && !lvlFive && !lvlSix && <h1 style={customStyle} className={styles.lvlOne}>{texto}</h1>}
+  </>
 }
+
+export default Titulo;

@@ -1,0 +1,71 @@
+:root{
+    --size-lvlOne: 3rem;
+    --size-lvlTwo: 2rem;
+    --size-lvlThree: 1.8rem;
+    --size-lvlFour: 1.6rem;
+    --size-lvlFive: 1.4rem;
+    --size-lvlSix: 1.2rem;
+
+    --color-lvl-1: red;
+    --color-lvl-2: green;
+    --color-lvl-3: blue;
+    --color-lvl-4: yellow; 
+    --color-lvl-5: purple;
+    --color-lvl-6: orange;
+}
+.lvlOne{
+    color: var(--color-lvl-1);
+    font-size: var(--size-lvlOne);
+}
+.lvlTwo{
+    color: var(--color-lvl-2);
+    font-size: var(--size-lvlTwo);
+ 
+}
+
+.lvlThree{
+    color: var(--color-lvl-3);
+    font-size: var(--size-lvlThree);
+}
+.lvlFour{
+    color: var(--color-lvl-4);
+    font-size: var(--size-lvlFour);
+}
+.lvlFive{
+    color: var(--color-lvl-5);
+    font-size: var(---size-lvlFive);
+}
+.lvlSix{
+    color: var(--color-lvl-6);
+    font-size: var(--size-lvlSix);
+}
+/* :is(.levelOne,.levelTwo,.levelThree,.levelFour,.levelFive,.levelSix){
+    padding: .5rem var(--padding);
+    margin: 0;
+} */
+/* Mobile */
+/* @media (max-width: 700px) {
+    .levelOne{
+        font-size: var(--font-size-mobile);
+    }
+    .levelTwo{
+        font-size: var(--font-size-mobile-nivel-2);
+    }
+    .levelThree{
+        font-size: var(--font-size-mobile-nivel-3);
+    }
+    .levelFour{
+        font-size: var(--font-size-mobile-nivel-4);
+    }
+    .levelFive{
+        font-size: var(--font-size-mobile-nivel-5);
+    }
+    .levelSix{
+        font-size: var(--font-size-mobile-nivel-6);
+    }
+} */
+  
+/* Tablet and Smaller Desktop */
+/* @media (min-width: 701px) and (max-width: 1120px) {
+    
+} */

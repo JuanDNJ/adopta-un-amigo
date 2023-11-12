@@ -1,0 +1,33 @@
+.vet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    place-items: center;
+}
+
+strong {
+    font-size: x-large;
+    color: var(--bColor-seccion, rgb(218, 155, 9));
+    text-align: center;
+    display: block;
+}
+
+.photoVet {
+    width: 256px;
+    height: 256px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: pink;
+    border: 2px solid var(--color-primario);
+}
+
+.description {
+    font-size: medium;
+    color: var(--color-primario, rgb(218, 155, 9));
+    text-align: center;
+    max-width: 180px;
+}
+.body{
+    height: 200px;
+    padding: 20px 0;
+}

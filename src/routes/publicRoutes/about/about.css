@@ -21,27 +21,10 @@
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    gap: .5rem;
-}
-.vet{
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-}
-.vet > strong{
-    font-size: small;
-    color: var(--color-primario);
-    text-align: center;
+    column-gap: 2rem;
 }
 
-.photoVet{
-    width: 128px;
-    height: 128px;
-    object-fit: cover;
-    border-radius: 50%;
-    background: pink;
-    border: 2px solid var(--color-primario);
-}
+
 ul.list-functions{
     list-style: circle inside;
     padding: 1rem;
